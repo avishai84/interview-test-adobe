@@ -65,20 +65,6 @@ function processHero(el) {
    }
  
     el.innerHTML = heroContent;
-    //     <div>
-    //         <h1>Do it all with Adobe Creative Cloud.</h1>
-    //         <p>Make anything you can imagine, from gorgeous images, graphics, and art to standout social posts, videos, PDFs, and more. Get 20+ apps in the All Apps plan plus generative AI tools powered by Adobe Firefly.</p>
-    //         <p class="action-area">
-    //             <a class="con-button" href="https://commerce.adobe.com/store/recommendation?items[0][id]=E27CB5D79014ACAB6953B091CEA72228&co=US&lang=en&cli=mini_plans">Free trial</a>
-    //             <a class="con-button blue" href="https://www.adobe.com/creativecloud/plans.html?plan=individual&filter=all&promoid=PYPVPZQK&mv=other">Buy now</a>
-    //         </p>
-    //     </div>
-    // </div>
-
-
-
-    //processBackgroundColor(el);
-    // add code here
 }
 
 function processBrick(el) {
