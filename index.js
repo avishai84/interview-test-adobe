@@ -102,29 +102,29 @@ function processFaq(el) {
         </div>`;
     });
     el.innerHTML = faqContent;
-        // Add event listeners to the buttons
-        const buttons = el.querySelectorAll('.faq-question-button');
-        buttons.forEach((button) => {
-            button.addEventListener('click', function() {
-                const expanded = this.getAttribute('aria-expanded') === 'true';
-                const controlledPanel = document.getElementById(this.getAttribute('aria-controls'));
-                const elClickedId = this.getAttribute('aria-controls');
-                const btnElementClicked = document.getElementById(elClickedId);
-                
-                // Collapse all answers and set aria-expanded to false
-                buttons.forEach(b => {
-                    b.setAttribute('aria-expanded', 'false');
-                    const panel = document.getElementById(b.getAttribute('aria-controls'));
-                    panel.setAttribute('aria-hidden', 'true');
-                    btnElementClicked.classList.add('open');
-                    btnElementClicked.parentElement.parentElement.setAttribute('data','sticky');
-                });
-                // Toggle the clicked button and its corresponding panel
-                this.setAttribute('aria-expanded', String(!expanded));
-                controlledPanel.setAttribute('aria-hidden', String(expanded));
-                 expanded ? (btnElementClicked.classList.remove('open'),btnElementClicked.parentElement.parentElement.removeAttribute('data')) : null;
+    // Add event listeners to the buttons
+    const buttons = el.querySelectorAll('.faq-question-button');
+    buttons.forEach((button) => {
+        button.addEventListener('click', function() {
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+            const controlledPanel = document.getElementById(this.getAttribute('aria-controls'));
+            const elClickedId = this.getAttribute('aria-controls');
+            const btnElementClicked = document.getElementById(elClickedId);
+            
+            // Collapse all answers and set aria-expanded to false
+            buttons.forEach(b => {
+                b.setAttribute('aria-expanded', 'false');
+                const panel = document.getElementById(b.getAttribute('aria-controls'));
+                panel.setAttribute('aria-hidden', 'true');
+                btnElementClicked.classList.add('open');
+                btnElementClicked.parentElement.parentElement.setAttribute('data','sticky');
             });
+            // Toggle the clicked button and its corresponding panel
+            this.setAttribute('aria-expanded', String(!expanded));
+            controlledPanel.setAttribute('aria-hidden', String(expanded));
+                expanded ? (btnElementClicked.classList.remove('open'),btnElementClicked.parentElement.parentElement.removeAttribute('data')) : null;
         });
+    });
 }
 
 function processBanner(el) {
